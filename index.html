@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Die persönliche Website von Paule – Einblicke in Geoinformatik, Karten und Projekte.">
+  <title>Paule — Persönliche Startseite</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17251f;
+      --muted: #52645b;
+      --paper: #f7f8f4;
+      --surface: #fff;
+      --accent: #20b581ff;
+      --accent-dark: #10583f;
+      --line: #d8e1da;
+      --soft: #e6f4ed;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+    }
+
+    a:focus-visible {
+      outline: 3px solid #bd672e;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    .wrap {
+      width: min(100% - 3rem, 1080px);
+      margin-inline: auto;
+    }
+
+    .site-header {
+      padding-block: 1.15rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .wordmark {
+      color: var(--ink);
+      font-weight: 750;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 0.94rem;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--accent-dark);
+      text-decoration: underline;
+    }
+
+    main {
+      padding-block: clamp(3.5rem, 8vw, 7rem);
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
+      align-items: center;
+      gap: clamp(2rem, 7vw, 6rem);
+      padding-bottom: clamp(4rem, 9vw, 7rem);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      color: var(--accent-dark);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 13ch;
+      margin-bottom: 1.1rem;
+      font-size: clamp(2.75rem, 7vw, 5.25rem);
+      letter-spacing: -0.065em;
+      line-height: 1.03;
+    }
+
+    .intro-copy {
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+    }
+
+    .intro-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-copy p + p {
+      margin-top: 1.15rem;
+    }
+
+    .portrait {
+      margin: 0;
+    }
+
+    .portrait img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border: 1px solid var(--line);
+      border-radius: 1.25rem;
+      background: var(--soft);
+      object-fit: contain;
+    }
+
+    .portrait figcaption {
+      margin-top: 0.85rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    section {
+      padding-block: clamp(3rem, 7vw, 5rem);
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      letter-spacing: -0.045em;
+      line-height: 1.15;
+    }
+
+    .section-heading p {
+      max-width: 40ch;
+      margin-bottom: 0.1rem;
+      color: var(--muted);
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 0.8rem;
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    caption {
+      padding: 1rem 1.1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: 1.05rem 1.2rem;
+      border-top: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    tbody tr:first-child td {
+      border-top: 1px solid var(--line);
+    }
+
+    tbody tr {
+      transition: background-color 140ms ease;
+    }
+
+    tbody tr:hover {
+      background: var(--soft);
+    }
+
+    td:first-child {
+      color: var(--accent-dark);
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 1.1rem;
+      background: var(--surface);
+      box-shadow: 0 5px 18px rgb(23 37 31 / 7%);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgb(23 37 31 / 14%);
+    }
+
+    .card a {
+      display: block;
+      height: 100%;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .card a:focus-visible {
+      outline-offset: -4px;
+    }
+
+    .card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 8 / 5;
+      background: var(--soft);
+      object-fit: cover;
+    }
+
+    .card-copy {
+      padding: 1.35rem 1.4rem 1.5rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.35rem;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .site-footer {
+      padding-block: 1.5rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(100% - 2rem, 560px);
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait {
+        max-width: 340px;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+
+      th,
+      td {
+        padding: 0.75rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#start" aria-label="Paule – Startseite">Paul<span aria-hidden="true">.</span></a>
+      <nav aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="#weg">Mein Weg</a></li>
+          <li><a href="#interessen">Interessen</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="start">
+    <div class="intro">
+      <div>
+        <p class="eyebrow">Geoinformatik · Karten · draußen sein</p>
+        <h1>Hallo, ich bin Paul.</h1>
+        <div class="intro-copy">
+          <p>Mich begeistert, wie aus Daten ein verständliches Bild unserer Welt wird. Ich beschäftige mich mit Geoinformatik, digitalen Karten und den Geschichten, die sich in Landschaften entdecken lassen.</p>
+          <p>Hier sammle ich Stationen meines Wegs und Projekte, die mich inspirieren. Schön, dass du vorbeischaust.</p>
+        </div>
+      </div>
+      <figure class="portrait">
+        <img src="https://www.hs-mainz.de/fileadmin/Icons/HSM_LOGO-V-310x310.png" alt="Logo der Hochschule Mainz">
+        <figcaption>Geoinformatik und Vermessung · Hochschule Mainz</figcaption>
+      </figure>
+    </div>
+
+    <section id="weg" aria-labelledby="weg-title">
+      <div class="section-heading">
+        <h2 id="weg-title">Mein Weg</h2>
+        <p>Sechs Stationen, die meinen Blick auf Orte und Karten geprägt haben.</p>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <caption>Eine Auswahl persönlicher Stationen — Jahre und Orte bei Bedarf ergänzen.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Jahr</th>
+              <th scope="col">Station</th>
+              <th scope="col">Ort</th>
+              <th scope="col">Stichwort</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2011</td><td>Schulzeit</td><td>Bendorf</td><td>Neugier</td></tr>
+            <tr><td>2024</td><td>Studienbeginn</td><td>Hochschule Mainz</td><td>Geoinformatik und Vermessung</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="interessen" aria-labelledby="interessen-title">
+      <div class="section-heading">
+        <h2 id="interessen-title">Dinge, die mich inspirieren</h2>
+      </div>
+      <div class="gallery">
+        <article class="card">
+          <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer" aria-label="OpenStreetMap öffnen (externer Link)">
+            <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Nächtlicher Himmel über einer Landschaft" loading="lazy">
+            <div class="card-copy">
+              <h3>OpenStreetMap</h3>
+              <p>Eine freie Weltkarte, die Menschen gemeinsam gestalten.</p>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="https://qgis.org/" target="_blank" rel="noopener noreferrer" aria-label="QGIS öffnen (externer Link)">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Berglandschaft mit See und weitem Blick" loading="lazy">
+            <div class="card-copy">
+              <h3>QGIS</h3>
+              <p>Leistungsstarke Open-Source-Werkzeuge für räumliche Daten.</p>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus" target="_blank" rel="noopener noreferrer" aria-label="Copernicus der ESA öffnen (externer Link)">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Erde aus dem Weltraum bei Nacht" loading="lazy">
+            <div class="card-copy">
+              <h3>Copernicus</h3>
+              <p>Satellitendaten, die Veränderungen auf der Erde sichtbar machen.</p>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="https://github.com/Paule0805" target="_blank" rel="noopener noreferrer" aria-label="GitHub-Profil von Paule öffnen (externer Link)">
+            <img src="https://picsum.photos/600/400?random=1" alt="Zufälliges Vorschaubild für GitHub" loading="lazy">
+            <div class="card-copy">
+              <h3>GitHub</h3>
+              <p>Meine Projekte und Code-Repositories.</p>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="https://example.com/portfolio" target="_blank" rel="noopener noreferrer" aria-label="Portfolio öffnen (Beispiellink)">
+            <img src="https://picsum.photos/600/400?random=2" alt="Zufälliges Vorschaubild für das Portfolio" loading="lazy">
+            <div class="card-copy">
+              <h3>Portfolio</h3>
+              <p>Eine Auswahl meiner Arbeiten und Projekte.</p>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="https://example.com/fotoblog" target="_blank" rel="noopener noreferrer" aria-label="Fotoblog öffnen (Beispiellink)">
+            <img src="https://picsum.photos/600/400?random=3" alt="Zufälliges Vorschaubild für den Fotoblog" loading="lazy">
+            <div class="card-copy">
+              <h3>Fotoblog</h3>
+              <p>Fotos und Eindrücke von unterwegs.</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Mit Neugier gemacht · <a href="#start">Zurück nach oben</a></p>
+    </div>
+  </footer>
+</body>
+</html>
