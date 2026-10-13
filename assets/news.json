@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Mein Weg in die Geoinformatik",
+    "date": "2026-10-13",
+    "summary": "Seit meinem Studienstart an der Hochschule Mainz im Jahr 2024 beschäftige ich mich damit, wie Geodaten helfen, unsere Welt besser zu verstehen und darzustellen.",
+    "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80",
+    "imageAlt": "Berglandschaft mit See und weitem Blick"
+  },
+  {
+    "title": "Karten entstehen gemeinsam",
+    "date": "2026-10-13",
+    "summary": "OpenStreetMap zeigt, wie viele einzelne Beiträge zu einer freien Weltkarte zusammenwachsen – ein spannendes Beispiel für gemeinschaftlich gepflegte Geodaten.",
+    "image": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=80",
+    "imageAlt": "Nächtlicher Himmel über einer Landschaft"
+  },
+  {
+    "title": "Die Erde aus dem All beobachten",
+    "date": "2026-10-13",
+    "summary": "Satellitenbilder machen Veränderungen an Land, Meer und Atmosphäre sichtbar. Copernicus verbindet diese Beobachtungen mit frei zugänglichen Daten.",
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80",
+    "imageAlt": "Erde aus dem Weltraum bei Nacht"
+  }
+]
