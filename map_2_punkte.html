@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_97bb15954194a01e93e72df1b438477f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_97bb15954194a01e93e72df1b438477f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_97bb15954194a01e93e72df1b438477f = L.map(
+                "map_97bb15954194a01e93e72df1b438477f",
+                {
+                    center: [50.0, 10.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ff0f1863a36c148feee12d048b291349 = L.tileLayer(
+                "https://tile.openstreetmap.de/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+  "referrerPolicy": "origin",
+}
+
+            );
+        
+    
+            tile_layer_ff0f1863a36c148feee12d048b291349.addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var marker_4642f55443ab9168851c6c96aceeeb3b = L.marker(
+                [60.39499551421885, 5.313326576805184],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_065bdb79ae304b16469b8a0e7f9e1e2b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_42f943b0b83701c18cac8301ba10efaa = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_96491c35c4b7340a6a761f21cb22c4b6 = $(`<div id="html_96491c35c4b7340a6a761f21cb22c4b6" style="width: 100.0%; height: 100.0%;"><b>Bergen, Norwegen</b></div>`)[0];
+                popup_42f943b0b83701c18cac8301ba10efaa.setContent(html_96491c35c4b7340a6a761f21cb22c4b6);
+            
+        
+
+        marker_4642f55443ab9168851c6c96aceeeb3b.bindPopup(popup_42f943b0b83701c18cac8301ba10efaa)
+        ;
+
+        
+    
+    
+            marker_4642f55443ab9168851c6c96aceeeb3b.bindTooltip(
+                `<div>
+                     Bergen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4642f55443ab9168851c6c96aceeeb3b.setIcon(icon_065bdb79ae304b16469b8a0e7f9e1e2b);
+            
+    
+            var marker_39317c19c3c3571a70ec080923b2437b = L.marker(
+                [59.437, 24.7536],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_e156bc596aec37ce9cae3e83362c1687 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_77638f21f226b3f5db09cb9e3a50022a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5bde23916a170066f8754539c1c67c49 = $(`<div id="html_5bde23916a170066f8754539c1c67c49" style="width: 100.0%; height: 100.0%;"><b>Tallinn, Estland</b></div>`)[0];
+                popup_77638f21f226b3f5db09cb9e3a50022a.setContent(html_5bde23916a170066f8754539c1c67c49);
+            
+        
+
+        marker_39317c19c3c3571a70ec080923b2437b.bindPopup(popup_77638f21f226b3f5db09cb9e3a50022a)
+        ;
+
+        
+    
+    
+            marker_39317c19c3c3571a70ec080923b2437b.bindTooltip(
+                `<div>
+                     Tallinn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_39317c19c3c3571a70ec080923b2437b.setIcon(icon_e156bc596aec37ce9cae3e83362c1687);
+            
+    
+            var marker_35e11a56731ecb4c336322beb8b4c054 = L.marker(
+                [50.0755, 14.4378],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_50d253518f9d9ae52bfabdd277c1088d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eee16925aec32940d3dda74cf967cc25 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d9f224d17c889d00923754a758241f6f = $(`<div id="html_d9f224d17c889d00923754a758241f6f" style="width: 100.0%; height: 100.0%;"><b>Prag, Tschechien</b></div>`)[0];
+                popup_eee16925aec32940d3dda74cf967cc25.setContent(html_d9f224d17c889d00923754a758241f6f);
+            
+        
+
+        marker_35e11a56731ecb4c336322beb8b4c054.bindPopup(popup_eee16925aec32940d3dda74cf967cc25)
+        ;
+
+        
+    
+    
+            marker_35e11a56731ecb4c336322beb8b4c054.bindTooltip(
+                `<div>
+                     Prag
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_35e11a56731ecb4c336322beb8b4c054.setIcon(icon_50d253518f9d9ae52bfabdd277c1088d);
+            
+    
+            var marker_bba4671d2c40ae75bb91e405cc58011e = L.marker(
+                [41.3874, 2.1686],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_90fcf23b594ef7add6b04f061c6f9b2c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7db79718d09552c50357e37a85f8aaed = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6af81ee44073dfac1d10987c6e2dd6fb = $(`<div id="html_6af81ee44073dfac1d10987c6e2dd6fb" style="width: 100.0%; height: 100.0%;"><b>Barcelona, Spanien</b></div>`)[0];
+                popup_7db79718d09552c50357e37a85f8aaed.setContent(html_6af81ee44073dfac1d10987c6e2dd6fb);
+            
+        
+
+        marker_bba4671d2c40ae75bb91e405cc58011e.bindPopup(popup_7db79718d09552c50357e37a85f8aaed)
+        ;
+
+        
+    
+    
+            marker_bba4671d2c40ae75bb91e405cc58011e.bindTooltip(
+                `<div>
+                     Barcelona
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bba4671d2c40ae75bb91e405cc58011e.setIcon(icon_90fcf23b594ef7add6b04f061c6f9b2c);
+            
+    
+            var marker_827a49357fc3d9080d4a62796a51f048 = L.marker(
+                [43.1204, 6.1286],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_365ac5c2196dfbb47d45eeed7b881bd8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_147a3047dfb5a871a8903deb0e7ebcbf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b067c8fb70ea341e47ca3fc31a65ddd4 = $(`<div id="html_b067c8fb70ea341e47ca3fc31a65ddd4" style="width: 100.0%; height: 100.0%;"><b>Hyères, Frankreich</b></div>`)[0];
+                popup_147a3047dfb5a871a8903deb0e7ebcbf.setContent(html_b067c8fb70ea341e47ca3fc31a65ddd4);
+            
+        
+
+        marker_827a49357fc3d9080d4a62796a51f048.bindPopup(popup_147a3047dfb5a871a8903deb0e7ebcbf)
+        ;
+
+        
+    
+    
+            marker_827a49357fc3d9080d4a62796a51f048.bindTooltip(
+                `<div>
+                     Hyères
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_827a49357fc3d9080d4a62796a51f048.setIcon(icon_365ac5c2196dfbb47d45eeed7b881bd8);
+            
+    
+            var marker_e0551d9f8bffb1b94b5f7cc4633da5bf = L.marker(
+                [43.137, 6.367],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_a3b67d173d4da8a79ebe5a6559d0413d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_641a1a84e9f8ea7974edd3945a8fad3c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_31f3b8e35651a22bb6622758871904c0 = $(`<div id="html_31f3b8e35651a22bb6622758871904c0" style="width: 100.0%; height: 100.0%;"><b>Le Lavandou, Frankreich</b></div>`)[0];
+                popup_641a1a84e9f8ea7974edd3945a8fad3c.setContent(html_31f3b8e35651a22bb6622758871904c0);
+            
+        
+
+        marker_e0551d9f8bffb1b94b5f7cc4633da5bf.bindPopup(popup_641a1a84e9f8ea7974edd3945a8fad3c)
+        ;
+
+        
+    
+    
+            marker_e0551d9f8bffb1b94b5f7cc4633da5bf.bindTooltip(
+                `<div>
+                     Lavandou
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e0551d9f8bffb1b94b5f7cc4633da5bf.setIcon(icon_a3b67d173d4da8a79ebe5a6559d0413d);
+            
+    
+            var marker_66b2234be283b444b283691df25f5400 = L.marker(
+                [44.658, -1.168],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_49646d7977bb7388a8c3b32b65755d5a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_42d9d106a1509f8bce99671c02ff599c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b6bc8a6ac4a1b1223129f93c0eacdc20 = $(`<div id="html_b6bc8a6ac4a1b1223129f93c0eacdc20" style="width: 100.0%; height: 100.0%;"><b>Arcachon, Frankreich</b></div>`)[0];
+                popup_42d9d106a1509f8bce99671c02ff599c.setContent(html_b6bc8a6ac4a1b1223129f93c0eacdc20);
+            
+        
+
+        marker_66b2234be283b444b283691df25f5400.bindPopup(popup_42d9d106a1509f8bce99671c02ff599c)
+        ;
+
+        
+    
+    
+            marker_66b2234be283b444b283691df25f5400.bindTooltip(
+                `<div>
+                     Arcachon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_66b2234be283b444b283691df25f5400.setIcon(icon_49646d7977bb7388a8c3b32b65755d5a);
+            
+    
+            var marker_e660e410ab1d7cceac6f9be75feb65b2 = L.marker(
+                [48.8566, 2.3522],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_8e3aea46e8f0865acc62ca1f259d2e43 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a912e9046377441032dec44b81fcc677 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_dc8fa59b3ca401bf6cdb7d7d34e3d866 = $(`<div id="html_dc8fa59b3ca401bf6cdb7d7d34e3d866" style="width: 100.0%; height: 100.0%;"><b>Paris, Frankreich</b></div>`)[0];
+                popup_a912e9046377441032dec44b81fcc677.setContent(html_dc8fa59b3ca401bf6cdb7d7d34e3d866);
+            
+        
+
+        marker_e660e410ab1d7cceac6f9be75feb65b2.bindPopup(popup_a912e9046377441032dec44b81fcc677)
+        ;
+
+        
+    
+    
+            marker_e660e410ab1d7cceac6f9be75feb65b2.bindTooltip(
+                `<div>
+                     Paris
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e660e410ab1d7cceac6f9be75feb65b2.setIcon(icon_8e3aea46e8f0865acc62ca1f259d2e43);
+            
+    
+            var marker_6bd8073140d17292b3f8b1205d375396 = L.marker(
+                [48.2082, 16.3738],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_df3bcefcf2d57bc91207e5817907db3a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2bf9c5b3401d3dacc0d872809536fcf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b317c75e65e7e4b252cd26a6fc9368a5 = $(`<div id="html_b317c75e65e7e4b252cd26a6fc9368a5" style="width: 100.0%; height: 100.0%;"><b>Wien, Österreich</b></div>`)[0];
+                popup_c2bf9c5b3401d3dacc0d872809536fcf.setContent(html_b317c75e65e7e4b252cd26a6fc9368a5);
+            
+        
+
+        marker_6bd8073140d17292b3f8b1205d375396.bindPopup(popup_c2bf9c5b3401d3dacc0d872809536fcf)
+        ;
+
+        
+    
+    
+            marker_6bd8073140d17292b3f8b1205d375396.bindTooltip(
+                `<div>
+                     Wien
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6bd8073140d17292b3f8b1205d375396.setIcon(icon_df3bcefcf2d57bc91207e5817907db3a);
+            
+    
+            var marker_1031cb7d573be8cdf5e2498652efd1a6 = L.marker(
+                [48.1486, 17.1077],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_6f114c54b862ad956f701a60c7f56a49 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5304d77034e67e359b1b4e0a217f320a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a9cc42ffd86f7e134bc1b21f19b5fd7a = $(`<div id="html_a9cc42ffd86f7e134bc1b21f19b5fd7a" style="width: 100.0%; height: 100.0%;"><b>Bratislava, Slowakei</b></div>`)[0];
+                popup_5304d77034e67e359b1b4e0a217f320a.setContent(html_a9cc42ffd86f7e134bc1b21f19b5fd7a);
+            
+        
+
+        marker_1031cb7d573be8cdf5e2498652efd1a6.bindPopup(popup_5304d77034e67e359b1b4e0a217f320a)
+        ;
+
+        
+    
+    
+            marker_1031cb7d573be8cdf5e2498652efd1a6.bindTooltip(
+                `<div>
+                     Bratislava
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1031cb7d573be8cdf5e2498652efd1a6.setIcon(icon_6f114c54b862ad956f701a60c7f56a49);
+            
+    
+            var marker_6fe072f75203e9e4858a0b9f2501c005 = L.marker(
+                [60.1699, 24.9384],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_3dc8def2bb19bb611d38498fa2ce8c9a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ab177cf8551a5d1ceb3ebb1314a2665d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f14b0f86d151f803024ff8c9912b8ce3 = $(`<div id="html_f14b0f86d151f803024ff8c9912b8ce3" style="width: 100.0%; height: 100.0%;"><b>Helsinki, Finnland</b></div>`)[0];
+                popup_ab177cf8551a5d1ceb3ebb1314a2665d.setContent(html_f14b0f86d151f803024ff8c9912b8ce3);
+            
+        
+
+        marker_6fe072f75203e9e4858a0b9f2501c005.bindPopup(popup_ab177cf8551a5d1ceb3ebb1314a2665d)
+        ;
+
+        
+    
+    
+            marker_6fe072f75203e9e4858a0b9f2501c005.bindTooltip(
+                `<div>
+                     Helsinki
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6fe072f75203e9e4858a0b9f2501c005.setIcon(icon_3dc8def2bb19bb611d38498fa2ce8c9a);
+            
+    
+            var marker_af7666a6a8441b3a47859f7436d02a05 = L.marker(
+                [59.9139, 10.7522],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_14c543c1b703fc8d944748541dcea169 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dfc37134147d91839a4b92c1edbed992 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d7544bd1ac1945aea329c18bec32c5a6 = $(`<div id="html_d7544bd1ac1945aea329c18bec32c5a6" style="width: 100.0%; height: 100.0%;"><b>Oslo, Norwegen</b></div>`)[0];
+                popup_dfc37134147d91839a4b92c1edbed992.setContent(html_d7544bd1ac1945aea329c18bec32c5a6);
+            
+        
+
+        marker_af7666a6a8441b3a47859f7436d02a05.bindPopup(popup_dfc37134147d91839a4b92c1edbed992)
+        ;
+
+        
+    
+    
+            marker_af7666a6a8441b3a47859f7436d02a05.bindTooltip(
+                `<div>
+                     Oslo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_af7666a6a8441b3a47859f7436d02a05.setIcon(icon_14c543c1b703fc8d944748541dcea169);
+            
+    
+            var marker_3907de4382abffa2fa8918a7fd5785b4 = L.marker(
+                [41.9028, 12.4964],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_fdd8a958d8fab6da10e2e0a12166ffaf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0d42d131757a94a2c71bad1fc626adb7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2203ed66c5cd3f505fe8c7e09c6f526c = $(`<div id="html_2203ed66c5cd3f505fe8c7e09c6f526c" style="width: 100.0%; height: 100.0%;"><b>Rom, Italien</b></div>`)[0];
+                popup_0d42d131757a94a2c71bad1fc626adb7.setContent(html_2203ed66c5cd3f505fe8c7e09c6f526c);
+            
+        
+
+        marker_3907de4382abffa2fa8918a7fd5785b4.bindPopup(popup_0d42d131757a94a2c71bad1fc626adb7)
+        ;
+
+        
+    
+    
+            marker_3907de4382abffa2fa8918a7fd5785b4.bindTooltip(
+                `<div>
+                     Rom
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3907de4382abffa2fa8918a7fd5785b4.setIcon(icon_fdd8a958d8fab6da10e2e0a12166ffaf);
+            
+    
+            var marker_e8908cfe8b7f90d008517d4a5eb5005d = L.marker(
+                [45.4384, 10.9916],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_83c8e0430286324953e43c68f5ca3744 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_044e60426c9ae19e02d4fdb45371bbbe = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_37b262d4836c1b1b022497df7b265eb1 = $(`<div id="html_37b262d4836c1b1b022497df7b265eb1" style="width: 100.0%; height: 100.0%;"><b>Verona, Italien</b></div>`)[0];
+                popup_044e60426c9ae19e02d4fdb45371bbbe.setContent(html_37b262d4836c1b1b022497df7b265eb1);
+            
+        
+
+        marker_e8908cfe8b7f90d008517d4a5eb5005d.bindPopup(popup_044e60426c9ae19e02d4fdb45371bbbe)
+        ;
+
+        
+    
+    
+            marker_e8908cfe8b7f90d008517d4a5eb5005d.bindTooltip(
+                `<div>
+                     Verona
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e8908cfe8b7f90d008517d4a5eb5005d.setIcon(icon_83c8e0430286324953e43c68f5ca3744);
+            
+    
+            var marker_fd1c8cf7f4cd53659fcc2121c9095cc8 = L.marker(
+                [49.6116, 6.1319],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_b135ae8f5e7402c81f40e6159dec85c3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3c7cce3f29f44792d79a933546ddacee = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ecfbb0aaa750d981cad2a193b9c49887 = $(`<div id="html_ecfbb0aaa750d981cad2a193b9c49887" style="width: 100.0%; height: 100.0%;"><b>Luxemburg</b></div>`)[0];
+                popup_3c7cce3f29f44792d79a933546ddacee.setContent(html_ecfbb0aaa750d981cad2a193b9c49887);
+            
+        
+
+        marker_fd1c8cf7f4cd53659fcc2121c9095cc8.bindPopup(popup_3c7cce3f29f44792d79a933546ddacee)
+        ;
+
+        
+    
+    
+            marker_fd1c8cf7f4cd53659fcc2121c9095cc8.bindTooltip(
+                `<div>
+                     Luxemburg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fd1c8cf7f4cd53659fcc2121c9095cc8.setIcon(icon_b135ae8f5e7402c81f40e6159dec85c3);
+            
+    
+            var marker_7ee021a1cac0dfa2065c09932b9f862a = L.marker(
+                [52.52, 13.405],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_dc6a6d4ae36171cc28523b84882cbf52 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5ff42162ab959aabefa5ce152160cf72 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_69f1c0126b274fa97712c62a06be26bd = $(`<div id="html_69f1c0126b274fa97712c62a06be26bd" style="width: 100.0%; height: 100.0%;"><b>Berlin, Deutschland</b></div>`)[0];
+                popup_5ff42162ab959aabefa5ce152160cf72.setContent(html_69f1c0126b274fa97712c62a06be26bd);
+            
+        
+
+        marker_7ee021a1cac0dfa2065c09932b9f862a.bindPopup(popup_5ff42162ab959aabefa5ce152160cf72)
+        ;
+
+        
+    
+    
+            marker_7ee021a1cac0dfa2065c09932b9f862a.bindTooltip(
+                `<div>
+                     Berlin
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7ee021a1cac0dfa2065c09932b9f862a.setIcon(icon_dc6a6d4ae36171cc28523b84882cbf52);
+            
+    
+            var marker_c224bb2a630f744147e086e0cb04ac90 = L.marker(
+                [50.1109, 8.6821],
+                {
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+            var icon_d0f2ad42c9f2874fbabeffb07a9e23b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a0e24c0afc004608f21ee6b05f2bc2a0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_eccb8ac55d0571309439253e11a6e4c7 = $(`<div id="html_eccb8ac55d0571309439253e11a6e4c7" style="width: 100.0%; height: 100.0%;"><b>Frankfurt am Main, Deutschland</b></div>`)[0];
+                popup_a0e24c0afc004608f21ee6b05f2bc2a0.setContent(html_eccb8ac55d0571309439253e11a6e4c7);
+            
+        
+
+        marker_c224bb2a630f744147e086e0cb04ac90.bindPopup(popup_a0e24c0afc004608f21ee6b05f2bc2a0)
+        ;
+
+        
+    
+    
+            marker_c224bb2a630f744147e086e0cb04ac90.bindTooltip(
+                `<div>
+                     Frankfurt am Main
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c224bb2a630f744147e086e0cb04ac90.setIcon(icon_d0f2ad42c9f2874fbabeffb07a9e23b7);
+            
+    
+            map_97bb15954194a01e93e72df1b438477f.fitBounds(
+                [[60.39499551421885, 5.313326576805184], [59.437, 24.7536], [50.0755, 14.4378], [41.3874, 2.1686], [43.1204, 6.1286], [43.137, 6.367], [44.658, -1.168], [48.8566, 2.3522], [48.2082, 16.3738], [48.1486, 17.1077], [60.1699, 24.9384], [59.9139, 10.7522], [41.9028, 12.4964], [45.4384, 10.9916], [49.6116, 6.1319], [52.52, 13.405], [50.1109, 8.6821]],
+                {"padding": [20, 20]}
+            );
+        
+    
+            var layer_control_335dd63b46851648bd6ce5690056a840_layers = {
+                base_layers : {
+                    "OpenStreetMap" : tile_layer_ff0f1863a36c148feee12d048b291349,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_335dd63b46851648bd6ce5690056a840 = L.control.layers(
+                layer_control_335dd63b46851648bd6ce5690056a840_layers.base_layers,
+                layer_control_335dd63b46851648bd6ce5690056a840_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_97bb15954194a01e93e72df1b438477f);
+
+        
+    
+            tile_layer_ff0f1863a36c148feee12d048b291349.addTo(map_97bb15954194a01e93e72df1b438477f);
+        
+    
+                marker_4642f55443ab9168851c6c96aceeeb3b.setIcon(icon_065bdb79ae304b16469b8a0e7f9e1e2b);
+            
+    
+                marker_39317c19c3c3571a70ec080923b2437b.setIcon(icon_e156bc596aec37ce9cae3e83362c1687);
+            
+    
+                marker_35e11a56731ecb4c336322beb8b4c054.setIcon(icon_50d253518f9d9ae52bfabdd277c1088d);
+            
+    
+                marker_bba4671d2c40ae75bb91e405cc58011e.setIcon(icon_90fcf23b594ef7add6b04f061c6f9b2c);
+            
+    
+                marker_827a49357fc3d9080d4a62796a51f048.setIcon(icon_365ac5c2196dfbb47d45eeed7b881bd8);
+            
+    
+                marker_e0551d9f8bffb1b94b5f7cc4633da5bf.setIcon(icon_a3b67d173d4da8a79ebe5a6559d0413d);
+            
+    
+                marker_66b2234be283b444b283691df25f5400.setIcon(icon_49646d7977bb7388a8c3b32b65755d5a);
+            
+    
+                marker_e660e410ab1d7cceac6f9be75feb65b2.setIcon(icon_8e3aea46e8f0865acc62ca1f259d2e43);
+            
+    
+                marker_6bd8073140d17292b3f8b1205d375396.setIcon(icon_df3bcefcf2d57bc91207e5817907db3a);
+            
+    
+                marker_1031cb7d573be8cdf5e2498652efd1a6.setIcon(icon_6f114c54b862ad956f701a60c7f56a49);
+            
+    
+                marker_6fe072f75203e9e4858a0b9f2501c005.setIcon(icon_3dc8def2bb19bb611d38498fa2ce8c9a);
+            
+    
+                marker_af7666a6a8441b3a47859f7436d02a05.setIcon(icon_14c543c1b703fc8d944748541dcea169);
+            
+    
+                marker_3907de4382abffa2fa8918a7fd5785b4.setIcon(icon_fdd8a958d8fab6da10e2e0a12166ffaf);
+            
+    
+                marker_e8908cfe8b7f90d008517d4a5eb5005d.setIcon(icon_83c8e0430286324953e43c68f5ca3744);
+            
+    
+                marker_fd1c8cf7f4cd53659fcc2121c9095cc8.setIcon(icon_b135ae8f5e7402c81f40e6159dec85c3);
+            
+    
+                marker_7ee021a1cac0dfa2065c09932b9f862a.setIcon(icon_dc6a6d4ae36171cc28523b84882cbf52);
+            
+    
+                marker_c224bb2a630f744147e086e0cb04ac90.setIcon(icon_d0f2ad42c9f2874fbabeffb07a9e23b7);
+            
+</script>
+</html>

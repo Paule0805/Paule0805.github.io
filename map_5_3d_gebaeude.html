@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D-Gebäude Deutschland · basemap.de</title>
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.137/Build/Cesium/Cesium.js"></script>
+  <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.137/Build/Cesium/Widgets/widgets.css">
+  <style>
+    html,
+    body,
+    #cesiumContainer {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #mapStatus {
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      z-index: 1;
+      max-width: min(32rem, calc(100% - 2rem));
+      padding: 0.65rem 0.9rem;
+      transform: translateX(-50%);
+      border-radius: 0.5rem;
+      background: #fff;
+      color: #17251f;
+      font: 14px/1.5 system-ui, sans-serif;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+    }
+
+    #mapStatus[hidden] {
+      display: none;
+    }
+
+    #mapCredit {
+      position: absolute;
+      right: 0.5rem;
+      bottom: 0.5rem;
+      z-index: 1;
+      padding: 0.25rem 0.5rem;
+      background: rgb(255 255 255 / 88%);
+      color: #17251f;
+      font: 12px/1.4 system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="cesiumContainer" aria-label="Interaktive 3D-Gebäudekarte für Deutschland"></div>
+  <p id="mapStatus" role="status">3D-Gebäude werden geladen …</p>
+  <div id="mapCredit">3D-Gebäudedaten: <a href="https://basemap.de/produkte-und-dienste/3d/" target="_blank" rel="noopener noreferrer">basemap.de / BKG</a></div>
+  <script>
+    const mapStatus = document.getElementById("mapStatus");
+    const viewer = new Cesium.Viewer("cesiumContainer", {
+      animation: false,
+      baseLayer: false,
+      baseLayerPicker: false,
+      geocoder: false,
+      homeButton: true,
+      sceneModePicker: false,
+      timeline: false,
+      navigationHelpButton: false,
+      shadows: false
+    });
+
+    const osm = new Cesium.UrlTemplateImageryProvider({
+      url: "https://tile.openstreetmap.de/{z}/{x}/{y}.png",
+      credit: new Cesium.Credit("© OpenStreetMap contributors", true)
+    });
+    viewer.imageryLayers.addImageryProvider(osm);
+
+    const imagery = new Cesium.WebMapServiceImageryProvider({
+      url: "https://sgx.geodatenzentrum.de/wms_basemapde?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities",
+      layers: "de_basemapde_web_raster_farbe",
+      parameters: {
+        transparent: true,
+        format: "image/png"
+      }
+    });
+    viewer.imageryLayers.addImageryProvider(imagery);
+
+    async function loadBuildings() {
+      try {
+        const tileset = await Cesium.Cesium3DTileset.fromUrl(
+          "https://sgx.geodatenzentrum.de/gdz_basemapde_3d_gebaeude/lod2_4326_null.json",
+          { showOutline: false }
+        );
+        viewer.scene.primitives.add(tileset);
+        tileset.style = new Cesium.Cesium3DTileStyle({
+          color: {
+            conditions: [
+              ["${surface} === 'wall'", "color('#f2f2f2')"],
+              ["${surface} === 'roof'", "color('#ff5c4d')"],
+              ["${surface} === 'bridge'", "color('#999999')"]
+            ]
+          }
+        });
+        viewer.camera.flyTo({
+          destination: Cesium.Cartesian3.fromDegrees(6.958215, 50.932767, 1500),
+          orientation: {
+            heading: Cesium.Math.toRadians(0),
+            pitch: Cesium.Math.toRadians(-50),
+            roll: 0
+          }
+        });
+        mapStatus.hidden = true;
+      } catch (error) {
+        console.error("3D-Gebäude konnten nicht geladen werden:", error);
+        mapStatus.textContent = "Die 3D-Gebäude konnten nicht geladen werden. Bitte versuche es später erneut.";
+      }
+    }
+
+    loadBuildings();
+  </script>
+</body>
+</html>
